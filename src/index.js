@@ -10,10 +10,9 @@ const { addUser, removeUser, getUser, getUsersRoom } = require('./utils/user')
 const app = express()
 const server = http.createServer(app)
 const io = socketio(server)
-
 const port = process.env.PORT || 3000
-const publicDirectPath = path.join(__dirname, '../public')
 
+const publicDirectPath = path.join(__dirname, '../public')
 app.use(express.static(publicDirectPath))
 
 io.on('connection', (socket) => {
